@@ -25,11 +25,13 @@ posts: list[dict] = [
     },
 ]
 
-@app.get("/", include_in_schema=False)
-@app.get("/posts", include_in_schema=False)
+
+@app.get("/", include_in_schema=False, name="home")
+@app.get("/posts", include_in_schema=False, name="posts")
 def home(request: Request):
-  return templates.TemplateResponse(request, "home.html", { "request": request, "posts": posts, "title": "Home" })
+    return templates.TemplateResponse(request, "home.html", {"request": request, "posts": posts, "title": "Home"})
+
 
 @app.get("/posts")
 def get_posts():
-  return posts
+    return posts
