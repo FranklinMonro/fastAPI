@@ -6,7 +6,7 @@ requires-python = ">=3.10"
 
 [tool.ruff]
 # Same as your VS Code setting
-line-length = 88
+line-length = 120
 target-version = "py310"
 
 [tool.ruff.lint]

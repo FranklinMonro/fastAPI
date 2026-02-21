@@ -1,5 +1,6 @@
-fastapi
+fastapi[standard]
 uvicorn[standard]
 pydantic
 ruff
-# Add any other dependencies here (e.g., sqlalchemy, etc.)
+jinja2
+python-multipart
