@@ -1,5 +1,5 @@
 {
-	"name": "Python & Typescript",
+	"name": "FastAPI Tutorial",
 	"image": "ghcr.io/prulloac/base:bookworm",
 
 	// 👇 Features to add to the Dev Container. More info: https://containers.dev/implementors/features.
@@ -9,6 +9,13 @@
 		"ghcr.io/devcontainers/features/node:1": {},
 		"ghcr.io/devcontainers/features/python:1": {},
 		"ghcr.io/devcontainers-extra/features/typescript:2": {}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"jraylan.django-template-extension"
+			]
+		}
 	}
 
 	// 👇 Use 'forwardPorts' to make a list of ports inside the container available locally.
