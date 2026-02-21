@@ -1,0 +1,28 @@
+[project]
+name = "fastapi-app"
+version = "0.1.0"
+description = "A modern FastAPI application"
+requires-python = ">=3.10"
+
+[tool.ruff]
+# Same as your VS Code setting
+line-length = 88
+target-version = "py310"
+
+[tool.ruff.lint]
+# "E" (Error), "F" (Pyflakes), "I" (Isort), "N" (pep8-naming), "UP" (pyupgrade)
+select = ["E", "F", "I", "N", "UP", "B"]
+ignore = []
+
+# Allow fixable errors (like unused imports) to be fixed automatically.
+fixable = ["ALL"]
+unfixable = []
+
+[tool.ruff.lint.isort]
+# This makes Ruff's import sorting behave exactly like the isort tool
+section-order = ["future", "standard-library", "third-party", "first-party", "local-folder"]
+
+[tool.ruff.format]
+# Use double quotes for strings (standard Python style)
+quote-style = "double"
+indent-style = "space"

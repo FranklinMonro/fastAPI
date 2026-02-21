@@ -1,29 +1,56 @@
 {
-	"name": "FastAPI Tutorial",
-	"image": "ghcr.io/prulloac/base:bookworm",
+  "name": "FastAPI Tutorial",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
 
-	// 👇 Features to add to the Dev Container. More info: https://containers.dev/implementors/features.
-	"features": {
-		"ghcr.io/devcontainers/features/docker-in-docker:2": {},
-		"ghcr.io/prulloac/devcontainer-features/bun:1": {},
-		"ghcr.io/devcontainers/features/node:1": {},
-		"ghcr.io/devcontainers/features/python:1": {},
-		"ghcr.io/devcontainers-extra/features/typescript:2": {}
-	},
-	"customizations": {
-		"vscode": {
-			"extensions": [
-				"jraylan.django-template-extension"
-			]
-		}
-	}
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/prulloac/devcontainer-features/bun:1": {},
+    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/devcontainers/features/python:1": {},
+    "ghcr.io/devcontainers-extra/features/typescript:2": {}
+  },
 
-	// 👇 Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
+  "customizations": {
+    "vscode": {
+      "settings": {
+        // We include the settings we discussed here so they are 
+        // automatically applied when the container is created
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "editor.formatOnSave": true,
+        "[python]": {
+          "editor.defaultFormatter": "charliermarsh.ruff",
+          "editor.codeActionsOnSave": {
+            "source.fixAll.ruff": "explicit",
+            "source.organizeImports.ruff": "explicit"
+          }
+        },
+        "python.analysis.typeCheckingMode": "basic"
+      },
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+				"ms-python.debugpy", // 👈 Make sure this is in your extensions list!
+        "charliermarsh.ruff", // The only Python formatter/linter you need now
+        "tamasfe.even-better-toml",
+        "oderwat.indent-rainbow",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint"
+      ]
+    }
+  },
 
-	// 👇 Configure tool-specific properties.
-	// "customizations": {},
+  "forwardPorts": [8000],
 
-	// 👇 Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
+	// 👇 This tells VS Code to open the browser automatically
+  "portsAttributes": {
+    "8000": {
+      "label": "FastAPI Server",
+      "onAutoForward": "openBrowser"
+    }
+  },
+
+  "remoteUser": "root"
 }
