@@ -35,12 +35,13 @@
       "extensions": [
         "ms-python.python",
         "ms-python.vscode-pylance",
-				"ms-python.debugpy", // 👈 Make sure this is in your extensions list!
-        "charliermarsh.ruff", // The only Python formatter/linter you need now
+        "ms-python.debugpy",
+        "charliermarsh.ruff",
         "tamasfe.even-better-toml",
         "oderwat.indent-rainbow",
         "esbenp.prettier-vscode",
-        "dbaeumer.vscode-eslint"
+        "dbaeumer.vscode-eslint",
+        "samuelcolvin.jinjahtml"
       ]
     }
   },

@@ -5,15 +5,18 @@
     "editor.codeActionsOnSave": {
       "source.fixAll.ruff": "explicit",
       "source.organizeImports.ruff": "explicit"
-    }
+    },
+    "editor.tabSize": 4,
+    "editor.insertSpaces": false,
+    "editor.detectIndentation": false,
+    "editor.renderWhitespace": "all",
+    "editor.guides.indentation": true
   },
-
   // Tell Pylance to be smart about FastAPI/Pydantic types
   "python.analysis.typeCheckingMode": "basic",
   "python.analysis.packageIndexDepths": [
-      { "name": "pydantic", "depth": 2 }
+    { "name": "pydantic", "depth": 2 }
   ],
-  
   // Keep the UI clean
   "files.exclude": {
     "**/__pycache__": true,
