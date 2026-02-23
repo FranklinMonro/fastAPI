@@ -1,3 +1,4 @@
+SQLAlchemy
 fastapi[standard]
 uvicorn[standard]
 pydantic
