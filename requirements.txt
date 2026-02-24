@@ -1,3 +1,8 @@
+pwdlib[argon2]
+pwdlib
+jwt
+pyjwt
+pydantic-settings
 greenlet
 aiosqlite
 SQLAlchemy
